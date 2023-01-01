@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "parser": "@typescript-eslint/parser",
+    "extraFileExtensions": [".vue"]
+  },
+
+  "rules": {
+    // Formatting
+    "indent": ["warn", 4],
+    "comma-dangle": ["warn", "always-multiline"],
+    "array-bracket-spacing": ["warn", "never"],
+    "space-before-blocks": ["warn", "always"],
+    "arrow-spacing": ["warn"],
+    "quotes": ["warn", "single"],
+    "object-curly-spacing": "warn",
+
+    // Ensure code stays simple
+    "complexity": ["error", 5],
+    "max-lines-per-function": [
+      "warn",
+      {
+        "max": 30,
+        "skipBlankLines": true,
+        "skipComments": true
+      }
+    ],
+    "max-depth": ["error", 4],
+    "max-statements-per-line": ["error", {"max": 2}],
+    "yoda": "warn",
+
+    // Improve readability
+    "id-length": ["error", {"exceptions": ["_"]}]
+  }
+}
